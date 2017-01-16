@@ -1,10 +1,11 @@
 var cacheName = 'easy-pwa';
 var filesToCache = [
-  '/'
+  '/',
+  '/index.html'
 ];
 
 if ('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js').then(function () {
+  navigator.serviceWorker.register('sw-epwa.js').then(function () {
     console.log('sw: service worker registered');
   })
 }
@@ -20,7 +21,7 @@ self.addEventListener('install', function (e) {
   )
 });
 
-// during activation if old cache of this app exists, remove it
+// during activation if old cached app version exists, remove it
 self.addEventListener('activate', function(e) {
   console.log('sw: activating');
   e.waitUntil(

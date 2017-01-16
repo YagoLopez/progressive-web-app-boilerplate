@@ -1,9 +1,11 @@
 <html>
   <head>
-    <script src="sw.js"></script>
+    <link rel="manifest" href="manifest.json">
   </head>
   <body>
     <h1>Easy progressive web app</h1>
-    <p>In Chrome, disconnect form network and the app will be able to load</p>
+    <p>Disconnect form network and the app must be able to load in Chrome</p>
+    <script src="sw-config.js"></script>
+    <script src="sw-epwa.js"></script>
   </body>
 </html>

@@ -1,9 +1,9 @@
 {
-  "short_name": "Yago López",
-  "name": "Yago López. Portafolio Profesional. Recopilación de conocimientos y experiencia en ingeniería del software",
+  "short_name": "Easy PWA",
+  "name": "Easy Progressive Web App",
   "icons": [
     {
-      "src": "ico/apple-touch-icon-144-precomposed.png",
+      "src": "img/icon144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     }
