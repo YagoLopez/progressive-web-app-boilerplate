@@ -1,8 +1,4 @@
 var cacheName = 'easy-pwa';
-var filesToCache = [
-  '/',
-  '/index.html'
-];
 
 if ('serviceWorker' in navigator){
   navigator.serviceWorker.register('sw-epwa.js').then(function () {
