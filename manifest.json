@@ -1,0 +1,15 @@
+{
+  "short_name": "Yago López",
+  "name": "Yago López. Portafolio Profesional. Recopilación de conocimientos y experiencia en ingeniería del software",
+  "icons": [
+    {
+      "src": "ico/apple-touch-icon-144-precomposed.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2196F3"
+}
