@@ -4,5 +4,11 @@
 
 var filesToCache = [
   '/',
-  '/index.html'
+  'sw-config.js',
+  'sw-epwa.js',
+  'manifest.json',
+  'index.html',
+  'page2.html',
+  'favicon.ico',
+  'img/icon144x144.png'
 ];
