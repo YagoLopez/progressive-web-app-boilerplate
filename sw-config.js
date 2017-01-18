@@ -5,7 +5,7 @@
 var filesToCache = [
   '/',
   'sw-config.js',
-  'sw-epwa.js',
+  'sw.js',
   'manifest.json',
   'index.html',
   'page2.html',

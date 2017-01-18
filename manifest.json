@@ -3,7 +3,7 @@
   "name": "Easy Progressive Web App",
   "icons": [
     {
-      "src": "img/icon144x144.png",
+      "src": "favicon.png",
       "sizes": "144x144",
       "type": "image/png"
     }
