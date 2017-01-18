@@ -8,13 +8,23 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta id="theme-color" name="theme-color" content="#4527A0">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="/img/icon144x144.png" sizes="144x144" type="image/png">
+    <!--<link rel="icon" href="/img/icon144x144.png" sizes="144x144" type="image/png">-->
+    <link rel="icon" href="favicon.ico" sizes="144x144" type="image/ico">
   </head>
   <body>
     <h1>Easy progressive web app</h1>
     <h2><a href="page2.html">Page 2</a> &rarr;</h2>
     <h3>Disconnect Chrome or the operating system form network and the app should be able to reload</h3>
     <!--<script src="sw-config.js"></script>-->
-    <script src="sw-epwa.js"></script>
+    <!--<script src="sw-epwa.js"></script>-->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw-epwa.js').then(function(reg) {
+          console.log('sw: registration succeeded');
+        }).catch(function(error) {
+          console.log('sw: registration failed ' + error);
+        });
+      }
+    </script>
   </body>
 </html>

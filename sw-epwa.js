@@ -5,7 +5,7 @@ var cacheName = 'epwa';
 var filesToCache = [
   '/',
   // 'sw-config.js',
-  'sw-epwa.js',
+  // 'sw-epwa.js',
   'manifest.json',
   'index.html',
   'page2.html',
@@ -13,13 +13,13 @@ var filesToCache = [
   'img/icon144x144.png'
 ];
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw-epwa.js').then(function(reg) {
-    console.log('sw: registration succeeded');
-  }).catch(function(error) {
-    console.log('sw: registration failed ' + error);
-  });
-}
+// if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.register('sw-epwa.js').then(function(reg) {
+//     console.log('sw: registration succeeded');
+//   }).catch(function(error) {
+//     console.log('sw: registration failed ' + error);
+//   });
+// }
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
