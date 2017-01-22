@@ -1,21 +1,32 @@
 ![](img/header.jpg)
 
-# Easy Progressive Web App
+# Easy Progressive Web Apps
 
-Keep it simple. Easy way to transform a web application into a Progressive Web App (PWA). There are other options on the Internet to accomplish it, but this is much simpler in my opinion. (for Chrome desktop and mobile at the moment).
+​Easy way to transform a web application into a Progressive Web App (PWA). There are other options on the Internet like *sw-precache*, but this way is much simpler in my opinion. Keep it simple :smiley: *(for Chrome desktop and mobile at the moment*).
 
-> PWAs enable the paradigm of one code base for all platforms: desktop and mobile (IOS, Android Windows Phone, etc.) This is a very efficient and low-cost way of software development for the enterprise -for example-. It avoids the current and inneficient platform fragmentation.
+> PWAs enable the paradigm of **one code base for all platforms** (desktop, IOS, Android, Windows Phone, etc.) This is a very efficient and low-cost software development process for the enterprise. It avoids the current and inneficient platform fragmentation. Aside, PWAs are very appropiated form mobile because they rercover automatically form desconexions in bad network conditions.
 
 
 
-## Beneficts
+## Benefits
 
-- Great user experience: faster and native feeling
-- Much lower cost of development and mantenance that multiple platforms
-- Better SEO
-- Lower data mobile use
+Best of both worlds:
+
+- Great user experience: fast navigation and native feeling
+
+- Much lower cost of development and manteinance: there is only one code base
+
+- Frictionless installation by one click
+
+- Easy way to push notifications
+
+- Indexed by search engines: better discoverability and SEO
+
+- Lower data mobile traffic
+
 - No app stores dependency
-- Best of both worlds: mobile and web
+
+  ​
 
 
 |                 Image 1                  |                 Image 2                  |
@@ -26,9 +37,9 @@ Keep it simple. Easy way to transform a web application into a Progressive Web A
 
 ## Elements needed for a Progressive Web App
 
-- `manifefest.json`: a file containing config metadata (app icon, app name, splash screen image, etc.)
-- `Service worker`: javascript file to cache assets (html, css, fonts, images...), receive notifications, etc. 
-  - A service worker is a javascript file that runs in the background and works like a proxy server. It allows to intercept requests and decide if response from cache memory or from network.
+- `manifefest.json`: a file containing configuration metadata (app icon, app name, etc.). It enables app installation.
+- `Service worker`: javascript file to cache assets (html, css, fonts, images...) and/or receive notifications.
+  - Definition: a service worker is a javascript file that runs in the background and works like a proxy server. It is able to intercept requests and decide if respond from cache memory or from network.
   - Browsers that don’t support them can just use the app online in the normal expected fashion.
 
   <img src="img/sw.png"/>
@@ -40,17 +51,18 @@ Keep it simple. Easy way to transform a web application into a Progressive Web A
 ## Requirements
 
 - Chrome for desktop or mobile (Probably it works on the latest Opera and FireFox versions, not tested)
-- Service workers need to be served through **https** protocol. It is available on GitHub, for example. For local development and testing they only work on localhost (Not valid for local intranet addresses or names, keep this in mind).
+- Service workers need to be served through **https** protocol or localhost during development (Not working with local network intranet addresses or names, keep this in mind).
 
 ## Use
 
-- Copy `manifes.json` and `sw-epwa.js` into your ***project root***
-- Configure `manifes.json` with values suited to your project: *app name, path to icon, etc.*
-  - In `sw-epwa.js` → `filesToCache` *array*, add the paths of the files that must be cached to load offline (this files are also called "app shell")
-- Add a shorcut icon to the home screen:
-  - In Chrome for desktop: upper right menu → "More tools" → "Add to desktop"
-  - In Chrome for mobile: upper right menu → "Add to home screen"
-- Note: in offline mode some errors may appea in consoler, you can ignore it. This do not prevent the right execution of the service worker.
+- Copy `manifes.json` and `sw-epwa.js` into the ***project root***
+- Configure `manifes.json` with values suited to the project: *app name, path to icon, etc.*
+  - In `sw-epwa.js` → `filesToCache` *array*, add the paths to the files that must be cached for offline use. (these files are also called "app shell")
+- Install the app in home screen:
+  - In Chrome for **desktop**: right upper menu → "More tools" → "Add to desktop"
+  - In Chrome for **mobile**: right upper menu → "Add to home screen"
+- Disconnect form network and open or reload the app
+- Note: in offline mode some errors may appear in console, you can ignore it. This do not prevent the right execution of the service worker.
 
 ## To do
 

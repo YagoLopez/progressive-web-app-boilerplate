@@ -1,0 +1,16 @@
+      .body-font{
+        font-family: 'Raleway', sans-serif;
+      }
+      .centered-img{
+        display: block;
+        margin: auto;
+      }
+      .centered-text{
+        text-align: center;
+      }
+      .full-width{
+        width: 100%;
+      }
+      .right-text{
+        text-align: right;
+      }

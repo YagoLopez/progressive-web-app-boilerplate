@@ -8,18 +8,26 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta id="theme-color" name="theme-color" content="#4527A0">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="favicon.png" sizes="144x144" type="image/png">
+
   </head>
 
-  <body class="body-font">
-    <img src="img/header.jpg" class="centered-img full-width"/>
+  <body>
+    <img src="img/header.jpg" style="text-align: center; width: 100%"/>
     <br>
     <h2><a href="page2.html">Page 2</a> &rarr;</h2>
-    <p>&bullet; Add the app icon to home screen from Chrome menu</p>
-    <p>&bullet; Disconnect Chrome or the operating system form network and the app should be able to reload</p>
-    <script async src="sw.js" type="text/javascript"></script>
+    <h3>&bullet; Add the app icon to home screen from Chrome menu</h3>
+    <h3>&bullet; Disconnect Chrome or the operating system form network and the app should be able to reload</h3>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function() {
+          console.log('sw: registration ok');
+        }).catch(function(error) {
+          console.error('sw: registration failed ', error);
+        })
+      }
+
+    </script>
   </body>
 </html>
