@@ -6,6 +6,9 @@
 
 > PWAs enable the paradigm of **one code base for all platforms** (desktop, IOS, Android, Windows Phone, etc.) This is a very efficient and low-cost software development process for the enterprise. It avoids the current and inneficient platform fragmentation. Aside, PWAs are very appropiated form mobile because they rercover automatically form desconexions in bad network conditions.
 
+## Demo
+
+#### <a href="https://yagolopez.github.io/progressive-web-app-boilerplate/" target=_blank>Open</a> →
 
 
 ## Benefits
@@ -44,9 +47,7 @@ Best of both worlds:
 
   <img src="img/sw.png"/>
 
-## Demo
 
-- <a href="https://yagolopez.github.io/progressive-web-app-boilerplate/" target=_blank>Open</a>
 
 ## Requirements
 
@@ -55,9 +56,9 @@ Best of both worlds:
 
 ## Use
 
-- Copy `manifes.json` and `sw-epwa.js` into the ***project root***
+- Copy `manifes.json` and `sw.js` into the ***project root***
 - Configure `manifes.json` with values suited to the project: *app name, path to icon, etc.*
-  - In `sw-epwa.js` → `filesToCache` *array*, add the paths to the files that must be cached for offline use. (these files are also called "app shell")
+  - In `sw.js` → `filesToCache` *array*, add the paths to the files that must be cached for offline use. (these files are also called "app shell")
 - Install the app in home screen:
   - In Chrome for **desktop**: right upper menu → "More tools" → "Add to desktop"
   - In Chrome for **mobile**: right upper menu → "Add to home screen"
