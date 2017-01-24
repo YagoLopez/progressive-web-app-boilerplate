@@ -44,6 +44,10 @@ self.addEventListener('install', function(event) {
   )
 });
 
+self.addEventListener('activate', function (event) {
+  console.log('sw: files installed to cache and sw activated', event);
+});
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     // test if the request is cached
