@@ -1,25 +1,27 @@
-// todo: seems the 'install' event is launched each time the page is reloaded, which cause an indeterminated error
+// todo: 'install' event is for old caches deletion. use it?
 // todo: split filesToCache in two arrays for easy configuration and merge them
-// todo: type definitions for typescript. referernces:
+// todo: use typescript. referernces:
 // https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/service_worker_api
 
 var cacheName = 'epwa';
 
 var filesToCache = [
 
-  // infrastructure files
+  // infrastructure files --------------------------
   '/',
   'index.html',
   'sw.js',
   'manifest.json',
   'favicon.png',
+  //------------------------------------------------
 
-  // app files
+  // app files -------------------------------------
   'page2.html',
   'css/styles.css',
   'img/header.jpg',
-  'img/bulb.png',
+  'img/offline-img.png',
   'https://fonts.googleapis.com/css?family=Raleway'
+  // -----------------------------------------------
 
 ];
 
@@ -46,12 +48,12 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     // test if the request is cached
     caches.match(event.request).then(function(response) {
-      // 1) if request cached: return response from cache (fetch(event.request) or
-      // 2) passes request unaltered to the browser to make an usual network request
+      // 1) if request cached: return "response" from cache
+      // 2) if request not cached, "fetch" resource from network
       return response || fetch(event.request);
     }).catch(function (err) {
-      // if request is not cached and  network is unavailable, return to index by default
-      return caches.match('index.html');
+      // if request is not cached and network is unavailable, return to index by default
+      return caches.match('img/offline-img.png');
     })
   )
 });
