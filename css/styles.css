@@ -3,7 +3,19 @@
 }
 .centered-img{
   display: block;
+  width: 100%;
   margin: auto;
+}
+.offline{
+  width: 100%;
+}
+@media (min-width: 720px){
+  .centered-img{
+    width: 50% !important;
+  }
+  .offline{
+    width: 50% !important;
+  }
 }
 .centered-text{
   text-align: center;
@@ -14,6 +26,8 @@
 .right-text{
   text-align: right;
 }
-.offline{
-  width: 100%;
+.paragraph{
+  padding-top: 15px;
+  text-align: center;
 }
+

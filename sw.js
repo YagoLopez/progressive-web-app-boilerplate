@@ -7,22 +7,21 @@ var cacheName = 'epwa';
 
 var filesToCache = [
 
-  // infrastructure files --------------------------
+  // infrastructure files ----------------------------------------------------------------------------------------------
   '/',
   'index.html',
   'sw.js',
   'manifest.json',
   'favicon.png',
-  //------------------------------------------------
+  //--------------------------------------------------------------------------------------------------------------------
 
-  // app files -------------------------------------
+  // app files ---------------------------------------------------------------------------------------------------------
   'page2.html',
   'css/styles.css',
   'img/header.jpg',
   'img/offline-img.png',
   'https://fonts.googleapis.com/css?family=Raleway'
-  // -----------------------------------------------
-
+  // -------------------------------------------------------------------------------------------------------------------
 ];
 
 // todo: check if service worker is installed before
@@ -33,31 +32,52 @@ if ('serviceWorker' in navigator) {
     console.error(err);
   });
 }
-
-// install (write) files to cache
+// ---------------------------------------------------------------------------------------------------------------------
+/**
+ * 'Install' event. Writing files to browser cache
+ *
+ * @param {string} Event name ('install')
+ * @param {function} Callback function with event data
+ *
+ */
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      console.log('sw: installing files into cache');
+      console.log('sw: writing files into cache');
       return cache.addAll(filesToCache);
     })
   )
 });
-
+// ---------------------------------------------------------------------------------------------------------------------
+/**
+ * 'Activate' event. Service worker is activated
+ *
+ * @param {string} Event name ('activate')
+ * @param {function} Callback function with event data
+ *
+ */
 self.addEventListener('activate', function (event) {
-  console.log('sw: files installed to cache and sw activated', event);
+  console.log('sw: service worker ready and activated', event);
 });
-
+// ---------------------------------------------------------------------------------------------------------------------
+/**
+ * 'Fetch' event. Browser tries to get resources making a request
+ *
+ * @param {string} Event name ('fetch')
+ * @param {function} Callback function with event data
+ *
+ */
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     // test if the request is cached
     caches.match(event.request).then(function(response) {
-      // 1) if request cached: return "response" from cache
-      // 2) if request not cached, "fetch" resource from network
+      // 1) if response cached, it will be returned from browser cache
+      // 2) if response not cached, fetch resource from network
       return response || fetch(event.request);
     }).catch(function (err) {
-      // if request is not cached and network is unavailable, return to index by default
+      // if response not cached and network not available an error is thrown => return fallback image
       return caches.match('img/offline-img.png');
     })
   )
 });
+// ---------------------------------------------------------------------------------------------------------------------
