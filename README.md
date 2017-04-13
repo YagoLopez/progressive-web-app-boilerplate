@@ -1,4 +1,7 @@
-![](img/header.jpg)
+<p align="center">
+<!-- ![](img/header.jpg) -->
+<img src="img/header.jpg">
+</p>
 
 # Easy Progressive Web Apps
 
@@ -37,15 +40,15 @@ In software engineering simplicity is very important. The aim of this project is
 
 - Lower data traffic: great for mobile.
 
-  ​
 
 
+<!--
 
 |                 Image 1                  |                 Image 2                  |
 | :--------------------------------------: | :--------------------------------------: |
 | <img src="img/pwa-stats4.png"/ style="width:250px; height:150px;"> | <img src="img/pwa-stats3.jpg"/ style="width:250px; height:150px;"> |
 
-
+-->
 
 ## Elements needed for a Progressive Web App
 
